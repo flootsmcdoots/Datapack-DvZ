@@ -1,0 +1,34 @@
+#> Description: Initializes the boss phase.
+
+# Set the game phase to 4 - Zombie phase.
+scoreboard players set &dvz dvz.game.phase 4
+
+# Display a seperate message to dwarves and zombies.
+tellraw @a[tag=dvz.dwarf] [ \
+  "", \
+  {text:"\u1110\u1111\u1112\n",font:"dvz:custom"}, \
+  {text:"▶ ",bold:true,color:"gold"}, \
+  {text:"The ",color:"gold"}, \
+  {text:"Zombies",color:"gold",bold:true}, \
+  {text:" are launching an attack!\n",color:"gold"}, \
+  {text:"▶ ",bold:true,color:"gold"}, \
+  {text:"Protect the ",color:"gold"}, \
+  {text:"Shrine",color:"gold",bold:true}, \
+  {text:" at all costs!",color:"gold"} \
+]
+tellraw @a[tag=dvz.zombie] [ \
+  "", \
+  {text:"\u1120\u1121\u1122\n",font:"dvz:custom"}, \
+  {text:"▶ ",bold:true,color:"light_purple"}, \
+  {text:"Attack the dwarven keep!\n",color:"light_purple"}, \
+  {text:"▶ ",bold:true,color:"light_purple"}, \
+  {text:"Destroy the ",color:"light_purple"}, \
+  {text:"Shrine",color:"light_purple",bold:true}, \
+  {text:"!",color:"light_purple"} \
+]
+
+# Make the shrine health bossbar visible.
+bossbar set dvz:shrine_health visible true
+
+# Give all the zombies spawn discs (exclude dead players, they will get spawn discs upon respawning).
+execute as @a[tag=dvz.zombie,tag=!dvz.zombie.class,tag=!dvz.dead] at @s run function dvz:zombie/give_discs

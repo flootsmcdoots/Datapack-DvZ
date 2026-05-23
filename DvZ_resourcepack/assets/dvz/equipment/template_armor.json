@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "dvz:template"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "dvz:template"
+      }
+    ]
+  }
+}

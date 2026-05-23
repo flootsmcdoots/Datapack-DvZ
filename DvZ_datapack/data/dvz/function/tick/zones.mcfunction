@@ -1,0 +1,37 @@
+#> Description: Handles what happens to players when they enter shrine zone, zombie spawn zone or ender portal zone.
+#> Note: Also handles dwarves taking damage when shrine is destroyed (lack of shrine zone).
+
+# Damage the dwarf if the shrine is gone.
+execute as @s[tag=dvz.dwarf] unless entity @e[type=minecraft:marker,tag=dvz.marker.shrine] run damage @s 4 dvz:shrine_destroyed by @s
+
+# Damage the dwarf if they are too far from shrine.
+execute as @s[tag=dvz.dwarf] at @n[type=minecraft:marker,tag=dvz.marker.shrine] if predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{min:128}}}} run damage @s 4 dvz:outside_shrine_range by @s
+
+# Damage the dwarf if they are too close to zombie spawn.
+execute as @s[tag=dvz.dwarf] at @e[type=minecraft:marker,tag=dvz.marker.zombie_spawn] if predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:32}}}} run damage @s 4 dvz:inside_zombie_spawn_range by @s
+
+# Toggle adventure mode for zombies near zombie spawn.
+execute as @s[tag=dvz.zombie,tag=!dvz.adventure.zombie_spawn] at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] if predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:8}}}} run tag @s add dvz.adventure.zombie_spawn
+execute as @s[tag=dvz.zombie,tag=dvz.adventure.zombie_spawn] at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] unless predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:8}}}} run tag @s remove dvz.adventure.zombie_spawn
+
+# Give/Remove obsidian skull to/from zombies near zombie spawn.
+execute as @s[tag=dvz.zombie.class,tag=!dvz.zombie.obsidian_skull] if score &dvz dvz.game.zombie_spawn_count matches 2.. at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] if predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:16}}}} at @s run function dvz:give/other/obsidian_skull
+execute as @s[tag=dvz.zombie.class,tag=!dvz.zombie.obsidian_skull] if score &dvz dvz.game.zombie_spawn_count matches 2.. at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] if predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:16}}}} run tag @s add dvz.zombie.obsidian_skull
+execute as @s[tag=dvz.zombie.class,tag=dvz.zombie.obsidian_skull] if score &dvz dvz.game.zombie_spawn_count matches 2.. at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] unless predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:32}}}} run clear @s minecraft:carrot_on_a_stick[minecraft:custom_data~{active_id:9002}]
+execute as @s[tag=dvz.zombie.class,tag=dvz.zombie.obsidian_skull] if score &dvz dvz.game.zombie_spawn_count matches 2.. at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] unless predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:32}}}} run tag @s remove dvz.zombie.obsidian_skull
+
+# Give/Remove resistance effect to/from zombies near zombie spawn.
+execute as @s[tag=dvz.zombie.class,tag=!dvz.zombie.zombie_spawn.resistance] at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] if predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:32}}}} run effect give @s minecraft:resistance infinite 4 true
+execute as @s[tag=dvz.zombie.class,tag=dvz.zombie.zombie_spawn.resistance] at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] unless predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:32}}}} run effect clear @s minecraft:resistance
+execute as @s[tag=dvz.zombie.class,tag=!dvz.zombie.zombie_spawn.resistance] at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] if predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:32}}}} run tag @s add dvz.zombie.zombie_spawn.resistance
+execute as @s[tag=dvz.zombie.class,tag=dvz.zombie.zombie_spawn.resistance] at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] unless predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:32}}}} run tag @s remove dvz.zombie.zombie_spawn.resistance
+
+# Give/Remove fall damage immunity to/from zombies near zombie spawn.
+execute as @s[tag=dvz.zombie.class,tag=!dvz.attribute.zombie_spawn.fall_damage_multiplier] at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] if predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:32}}}} run attribute @s minecraft:fall_damage_multiplier modifier add dvz:zombie_spawn.fall_damage_multiplier -1 add_multiplied_total
+execute as @s[tag=dvz.zombie.class,tag=dvz.attribute.zombie_spawn.fall_damage_multiplier] at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] unless predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:32}}}} run attribute @s minecraft:fall_damage_multiplier modifier remove dvz:zombie_spawn.fall_damage_multiplier
+execute as @s[tag=dvz.zombie.class,tag=!dvz.attribute.zombie_spawn.fall_damage_multiplier] at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] if predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:32}}}} run tag @s add dvz.attribute.zombie_spawn.fall_damage_multiplier
+execute as @s[tag=dvz.zombie.class,tag=dvz.attribute.zombie_spawn.fall_damage_multiplier] at @n[type=minecraft:marker,tag=dvz.marker.zombie_spawn] unless predicate {condition:"entity_properties",entity:"this",predicate:{distance:{horizontal:{max:32}}}} run tag @s remove dvz.attribute.zombie_spawn.fall_damage_multiplier
+
+# Give fall damage immunity to zombies near ender portal.
+execute as @s[tag=dvz.zombie.class,tag=!dvz.attribute.ender_portal.fall_damage_multiplier] if entity @e[type=minecraft:marker,tag=dvz.marker.ender_portal,distance=..8] run attribute @s minecraft:fall_damage_multiplier modifier add dvz:ender_portal.fall_damage_multiplier -1 add_multiplied_total
+execute as @s[tag=dvz.zombie.class,tag=!dvz.attribute.ender_portal.fall_damage_multiplier] if entity @e[type=minecraft:marker,tag=dvz.marker.ender_portal,distance=..8] run tag @s add dvz.attribute.ender_portal.fall_damage_multiplier

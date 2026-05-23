@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:wither",
+    "dvz:shrine_destroyed",
+    "dvz:outside_shrine_range",
+    "dvz:inside_zombie_spawn_range",
+    "dvz:cyanide"
+  ]
+}

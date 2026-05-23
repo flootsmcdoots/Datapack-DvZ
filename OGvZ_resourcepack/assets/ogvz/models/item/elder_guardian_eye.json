@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "ogvz:item/dwarf/item/elder_guardian_eye"
-  }
-}

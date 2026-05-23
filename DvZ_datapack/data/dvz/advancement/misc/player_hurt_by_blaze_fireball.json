@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "a": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "minecraft:small_fireball",
+              "nbt": "{Tags:[\"dvz.projectile.blaze_fireball\"]}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "dvz:zombie/ability/blaze/fireball_hit"
+  }
+}

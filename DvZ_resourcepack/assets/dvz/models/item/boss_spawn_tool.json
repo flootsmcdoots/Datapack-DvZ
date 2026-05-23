@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dvz:item/admin/boss_spawn_tool"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "dvz:item/zombie/ability/slapper_fish"
+  }
+}

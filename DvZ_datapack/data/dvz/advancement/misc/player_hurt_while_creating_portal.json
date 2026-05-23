@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"dvz.zombie.class.enderman.creating_portal\"]}"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "dvz:zombie/ability/enderman/create_portal_cancel"
+  }
+}

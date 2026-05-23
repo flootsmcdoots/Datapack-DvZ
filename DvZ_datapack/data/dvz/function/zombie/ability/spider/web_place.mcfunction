@@ -1,0 +1,25 @@
+#> Description: Place down cobwebs in specific configuration.
+#> Called by: web.mcfunction
+
+# Bottom Layer
+# @@@
+# @@@
+# @@@
+fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:cobweb replace #dvz:go_through
+#fill ~-1 ~ ~-1 ~-1 ~ ~-1 minecraft:cobweb replace #dvz:go_through
+#fill ~-1 ~ ~1 ~-1 ~ ~1 minecraft:cobweb replace #dvz:go_through
+#fill ~1 ~ ~-1 ~1 ~ ~-1 minecraft:cobweb replace #dvz:go_through
+#fill ~1 ~ ~1 ~1 ~ ~1 minecraft:cobweb replace #dvz:go_through
+
+# Middle Layer
+#  @ 
+# @@@
+#  @ 
+fill ~-1 ~1 ~ ~1 ~1 ~ minecraft:cobweb replace #dvz:go_through
+fill ~ ~1 ~-1 ~ ~1 ~1 minecraft:cobweb replace #dvz:go_through
+
+# Top Layer
+#    
+#  @ 
+#    
+fill ~ ~2 ~ ~ ~2 ~ minecraft:cobweb replace #dvz:go_through

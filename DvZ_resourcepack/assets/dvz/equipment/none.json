@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "dvz:none"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "dvz:none"
+      }
+    ]
+  }
+}

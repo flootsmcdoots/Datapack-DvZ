@@ -1,0 +1,64 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:white_bundle",
+          "weight":1,
+          "functions": [
+            {
+              "function" : "minecraft:set_contents",
+              "component" : "minecraft:bundle_contents",
+              "entries" : [
+                {"type":"minecraft:item","name": "minecraft:netherite_upgrade_smithing_template"},
+                {"type":"minecraft:item","name": "minecraft:netherite_upgrade_smithing_template"},
+                {"type":"minecraft:item","name": "minecraft:netherite_upgrade_smithing_template"},
+                {"type":"minecraft:item","name": "minecraft:netherite_ingot"},
+                {"type":"minecraft:item","name": "minecraft:netherite_ingot"},
+                {"type":"minecraft:item","name": "minecraft:netherite_ingot"},
+                {"type":"minecraft:item","name": "minecraft:smithing_table"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_enchantments",
+              "enchantments": {
+                "aqua_affinity": 1,
+                "respiration": 3,
+                "depth_strider": 3,
+                "feather_falling": 4,
+                "swift_sneak": 3,
+                "thorns": 3,
+                "frost_walker": 2,
+                "protection": 4,
+
+                "flame": 1,
+                "punch": 2,
+                "infinity": 1,
+                "power": 5,
+
+                "fire_aspect": 1,
+                "sharpness": 5,
+                "sweeping_edge": 3,
+
+                "unbreaking": 3
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

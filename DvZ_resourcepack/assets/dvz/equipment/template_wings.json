@@ -1,0 +1,10 @@
+{
+  "layers": {
+    "wings": [
+      {
+        "texture": "dvz:template",
+        "use_player_texture": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"dvz.mana.teleporting\"]}"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "dvz:dwarf/item/pearl_rod_cancel"
+  }
+}
