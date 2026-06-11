@@ -12,7 +12,6 @@ execute as @s at @s run function dvz:misc/remove_attributes
 
 # Remove the player's tags that aren't removed by the dvz:misc/remove_tags function.
 tag @s remove dvz.joined_game
-tag @s remove dvz.admin
 tag @s remove dvz.dead
 tag @s remove dvz.marked_for_death
 tag @s remove dvz.zombie.punish
