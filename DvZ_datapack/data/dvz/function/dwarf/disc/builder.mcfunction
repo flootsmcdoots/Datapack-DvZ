@@ -94,7 +94,7 @@ give @s minecraft:carrot_on_a_stick[ \
   minecraft:item_name={text:"Summoning Book",color:"green"}, \
   minecraft:lore=[ \
     {text:"Conjures blocks.",color:"blue"}, \
-    {text:"30 second cooldown",italic:false,color:"red"}, \
+    {text:"Requires 30 mana",italic:false,color:"red"}, \
     {text:"Active Item",italic:false,color:"green"} \
   ], \
   minecraft:tooltip_display={ \

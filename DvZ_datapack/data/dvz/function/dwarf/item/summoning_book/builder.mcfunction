@@ -1,17 +1,20 @@
 #> Description: Gives the player builder summoning book transmutation items.
 
-# Display a fail message and return if the item is on a cooldown.
-execute if entity @s[scores={dvz.builder.summoning_book.cooldown.seconds=1..}] run title @s actionbar [ \
+# Display a fail message and return if the player doesn't have enough mana.
+execute unless entity @s[level=30..] run title @s actionbar [ \
   "", \
   {text:"[Summoning Book]",bold:true,color:"red"}, \
-  {text:" You have ",color:"red"}, \
-  {"score":{"name":"@s","objective":"dvz.builder.summoning_book.cooldown.seconds"},bold:true,color:"red"}, \
-  {text:" seconds remaining!",color:"red"} \
+  {text:" You need at least ",color:"red"}, \
+  {text:"30 mana",bold:true,color:"red"}, \
+  {text:"!",color:"red"} \
 ]
-execute if entity @s[scores={dvz.builder.summoning_book.cooldown.seconds=1..}] run return 0
+execute unless entity @s[level=30..] run return 0
 
-# Set the cooldown.
-scoreboard players set @s dvz.builder.summoning_book.cooldown.seconds 30
+# Remove 30 mana (levels) from the player.
+scoreboard players remove @s dvz.dwarf.mana_buildup.mana 30
+
+# Clear the global active item/ability cooldown.
+scoreboard players set @s dvz.rclick.cooldown 0
 
 # Display an activation message.
 title @s actionbar [ \
