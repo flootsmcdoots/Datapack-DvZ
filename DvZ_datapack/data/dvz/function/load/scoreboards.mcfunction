@@ -105,16 +105,8 @@ scoreboard objectives add dvz.marker.ender_portal.animation.ticks dummy
 # All dwarves
 scoreboard objectives add dvz.dwarf.mana_buildup.mana dummy
 scoreboard objectives add dvz.dwarf.mana_buildup.micromana dummy
-scoreboard objectives add dvz.dwarf.pearl_rod.cooldown.ticks dummy
-scoreboard objectives add dvz.dwarf.pearl_rod.cooldown.seconds dummy
-scoreboard objectives add dvz.dwarf.pearl_rod.warmup.ticks dummy
-scoreboard objectives add dvz.dwarf.pearl_rod.warmup.seconds dummy
 scoreboard objectives add dvz.dwarf.oceans_pearl_buff.cooldown.ticks dummy
 scoreboard objectives add dvz.dwarf.oceans_pearl_buff.cooldown.seconds dummy
-
-# Builder
-scoreboard objectives add dvz.builder.summoning_book.cooldown.ticks dummy
-scoreboard objectives add dvz.builder.summoning_book.cooldown.seconds dummy
 
 ### Dwarf hero scoreboards
 # Dragon Warrior

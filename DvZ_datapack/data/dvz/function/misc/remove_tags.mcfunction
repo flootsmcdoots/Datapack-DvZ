@@ -109,7 +109,6 @@ tag @s remove dvz.zombie.element.electric
 
 ## misc tags
 tag @s remove dvz.mana
-tag @s remove dvz.mana.teleporting
 
 tag @s remove dvz.adventure.lobby
 tag @s remove dvz.adventure.zombie_spawn

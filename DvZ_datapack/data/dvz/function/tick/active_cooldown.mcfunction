@@ -8,26 +8,6 @@ execute as @s[scores={dvz.rclick.cooldown=1..}] run scoreboard players remove @s
 # All - Custom Bar (hide)
 execute as @s[scores={dvz.misc.custom_bar_hide.ticks=1..}] run scoreboard players remove @s dvz.misc.custom_bar_hide.ticks 1
 
-# Builder - Summoning Book
-execute as @s[scores={dvz.builder.summoning_book.cooldown.seconds=1..}] run scoreboard players add @s dvz.builder.summoning_book.cooldown.ticks 1
-execute as @s[scores={dvz.builder.summoning_book.cooldown.ticks=20..}] run scoreboard players remove @s dvz.builder.summoning_book.cooldown.seconds 1
-execute as @s[scores={dvz.builder.summoning_book.cooldown.ticks=20..,dvz.builder.summoning_book.cooldown.seconds=0}] run playsound minecraft:block.note_block.bell player @s ~ ~ ~ 1 2 1
-execute as @s[scores={dvz.builder.summoning_book.cooldown.ticks=20..,dvz.builder.summoning_book.cooldown.seconds=0}] run title @s actionbar ["",{text:"[Summoning Book]",bold:true,color:"blue"},{text:" Recharged!",color:"blue"}]
-execute as @s[scores={dvz.builder.summoning_book.cooldown.ticks=20..}] run scoreboard players set @s dvz.builder.summoning_book.cooldown.ticks 0
-
-# Dwarves - Pearl Rod (cooldown)
-execute as @s[scores={dvz.dwarf.pearl_rod.cooldown.seconds=1..}] run scoreboard players add @s dvz.dwarf.pearl_rod.cooldown.ticks 1
-execute as @s[scores={dvz.dwarf.pearl_rod.cooldown.ticks=20..}] run scoreboard players remove @s dvz.dwarf.pearl_rod.cooldown.seconds 1
-execute as @s[scores={dvz.dwarf.pearl_rod.cooldown.ticks=20..,dvz.dwarf.pearl_rod.cooldown.seconds=0}] run playsound minecraft:block.note_block.bell player @s ~ ~ ~ 1 2 1
-execute as @s[scores={dvz.dwarf.pearl_rod.cooldown.ticks=20..,dvz.dwarf.pearl_rod.cooldown.seconds=0}] run playsound minecraft:entity.enderman.teleport player @s ~ ~ ~ 1 0.5 1
-execute as @s[scores={dvz.dwarf.pearl_rod.cooldown.ticks=20..,dvz.dwarf.pearl_rod.cooldown.seconds=0}] run title @s actionbar ["",{text:"[Pearl Rod]",bold:true,color:"blue"},{text:" Recharged!",color:"blue"}]
-execute as @s[scores={dvz.dwarf.pearl_rod.cooldown.ticks=20..}] run scoreboard players set @s dvz.dwarf.pearl_rod.cooldown.ticks 0
-
-# Dwarves - Pearl Rod (warmup)
-execute as @s[scores={dvz.dwarf.pearl_rod.warmup.seconds=1..}] run scoreboard players add @s dvz.dwarf.pearl_rod.warmup.ticks 1
-execute as @s[scores={dvz.dwarf.pearl_rod.warmup.ticks=20..}] run scoreboard players remove @s dvz.dwarf.pearl_rod.warmup.seconds 1
-execute as @s[scores={dvz.dwarf.pearl_rod.warmup.ticks=20..}] run scoreboard players set @s dvz.dwarf.pearl_rod.warmup.ticks 0
-
 # Dwarves - Ocean's Pearl (buff)
 execute as @s[scores={dvz.dwarf.oceans_pearl_buff.cooldown.seconds=1..}] run scoreboard players add @s dvz.dwarf.oceans_pearl_buff.cooldown.ticks 1
 execute as @s[scores={dvz.dwarf.oceans_pearl_buff.cooldown.ticks=20..}] run scoreboard players remove @s dvz.dwarf.oceans_pearl_buff.cooldown.seconds 1

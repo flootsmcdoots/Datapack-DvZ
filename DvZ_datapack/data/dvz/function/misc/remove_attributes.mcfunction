@@ -11,10 +11,6 @@ attribute @s minecraft:movement_speed modifier remove dvz:frozen.jump_strength
 tag @s remove dvz.attribute.dolphins_grace_nerf.water_movement_efficiency
 attribute @s minecraft:water_movement_efficiency modifier remove dvz:dolphins_grace_nerf.water_movement_efficiency
 
-# Pearl rod - teleportation
-attribute @s minecraft:movement_speed modifier remove dvz:pearl_rod.teleporting.movement_speed
-attribute @s minecraft:jump_strength modifier remove dvz:pearl_rod.teleporting.jump_strength
-
 # Ender Eye - teleportation
 attribute @s minecraft:movement_speed modifier remove dvz:ender_eye.teleporting.movement_speed
 attribute @s minecraft:jump_strength modifier remove dvz:ender_eye.teleporting.jump_strength

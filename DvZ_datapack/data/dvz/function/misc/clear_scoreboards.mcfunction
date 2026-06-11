@@ -11,11 +11,6 @@ scoreboard players set @s dvz.misc.custom_bar_hide.ticks 0
 scoreboard players set @s dvz.dwarf.mana_buildup.mana 0
 scoreboard players set @s dvz.dwarf.mana_buildup.micromana 0
 
-scoreboard players set @s dvz.builder.summoning_book.cooldown.ticks 0
-scoreboard players set @s dvz.builder.summoning_book.cooldown.seconds 0
-
-scoreboard players set @s dvz.dwarf.pearl_rod.cooldown.ticks 0
-scoreboard players set @s dvz.dwarf.pearl_rod.cooldown.seconds 0
 scoreboard players set @s dvz.dwarf.oceans_pearl_buff.cooldown.ticks 0
 scoreboard players set @s dvz.dwarf.oceans_pearl_buff.cooldown.seconds 0
 

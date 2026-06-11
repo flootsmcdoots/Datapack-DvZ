@@ -87,7 +87,6 @@ execute as @s[tag=dvz.mana,scores={dvz.rclick.active_id=3100}] at @s run functio
 execute as @s[tag=dvz.mana,scores={dvz.rclick.active_id=3101}] at @s run function dvz:dwarf/item/magic_potion/swiftness
 execute as @s[tag=dvz.mana,scores={dvz.rclick.active_id=3102}] at @s run function dvz:dwarf/item/magic_potion/strength
 execute as @s[tag=dvz.mana,scores={dvz.rclick.active_id=3103}] at @s run function dvz:dwarf/item/magic_potion/leaping
-execute as @s[tag=dvz.mana,scores={dvz.rclick.active_id=3104}] at @s run function dvz:dwarf/item/pearl_rod
 execute as @s[scores={dvz.rclick.active_id=3105}] at @s run function dvz:dwarf/item/water_wand
 execute as @s[scores={dvz.rclick.active_id=3106}] at @s run function dvz:dwarf/item/fertilizer
 

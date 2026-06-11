@@ -16,9 +16,6 @@ execute as @s[tag=dvz.dwarf] at @e[type=minecraft:marker,tag=dvz.marker.zombie_s
 # Frozen custom effect.
 execute as @a[tag=dvz.frozen] at @s anchored eyes positioned ^ ^ ^ run particle minecraft:snowflake ~ ~ ~ 0.25 0.25 0.25 0 1
 
-# Pearl Rod - During teleportation warmup.
-execute as @a[tag=dvz.mana.teleporting] at @s run particle minecraft:reverse_portal ~ ~1 ~ 0.25 0.25 0.25 0.1 1
-
 # Wither Warrior Whispersong Soul Charged Arrow
 execute as @e[type=#minecraft:arrows,tag=temp.charged_whispersong_arrow] at @s run particle minecraft:soul ~ ~ ~ 0 0 0 1 0
 

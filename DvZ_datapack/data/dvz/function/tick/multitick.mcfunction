@@ -1,8 +1,5 @@
 #> Description: Function tree for items/abilities that last more than 1 tick.
 
-# Dwarves - Pearl Rod
-execute as @a[tag=dvz.mana.teleporting,scores={dvz.dwarf.pearl_rod.warmup.seconds=..0}] at @s run function dvz:dwarf/item/pearl_rod_teleport
-
 # Assassin Slayer - Cloak of Shadows
 execute as @a[tag=dvz.dwarf.class.hero.assassin_slayer.invisible,level=0] at @s run function dvz:dwarf/item/hero/assassin_slayer/cloak_of_shadows_cancel
 
