@@ -1,41 +1,8 @@
 {
-  "condition": "minecraft:any_of",
-  "terms": [
-    {
-      "condition": "minecraft:reference",
-      "name": "dvz:player/is_ropefullofhope"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "dvz:player/is_hopefullofrope"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "dvz:player/is_sahlonahl"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "dvz:player/is_astraeos_"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "dvz:player/is_anakaie"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "dvz:player/is_the_lasagna_man"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "dvz:player/is_ethamore"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "dvz:player/is_laikbruh"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "dvz:player/is_shoo0"
-    }
-  ]
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:player",
+    "nbt": "{Tags:[\"dvz.admin\"]}"
+  }
 }
